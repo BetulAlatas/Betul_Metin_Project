@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>Spor Toto Süper Lig</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Content/angular-confirm.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-confirm.js"></script>
+    <script src="Scripts/app.js"></script>
+    <script src="Scripts/Service/alert.js"></script>
+    <script src="Scripts/mainController.js"></script>
+  </head>
+<body ng-controller="mainController">
+    <div class="container" style="width: 700px; margin-left: auto; margin-right: auto;">
+        <h3>{{currentWeek}}. Hafta Maçlar</h3>
+        <table class="table table-bordered ">
+            <thead>
+                <tr>
+                    <th class="info" style="text-align: center">Maç</th>
+                    <th class="info" style="text-align: center">Skor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in data[thisWeek]">
+                    <td>{{item.team1.name}} - {{item.team2.name}}</td>
+                    <td>{{item.score}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button style="margin-left: auto; margin-right: auto; margin-bottom:20px;" 
+                class="btn btn-success" 
+                ng-disabled="disabledFirstButton"
+                ng-click="playThisWeek()">
+            Bu Haftayı Oynat
+        </button>
+        <button style="margin-left: auto; margin-right: auto; margin-bottom:20px;" 
+                class="btn btn-warning" 
+                ng-disabled="disabledNextButton"
+                ng-click="playNextWeek()">
+           Sonraki Haftayı Oynat
+        </button>
+        <button style="margin-left: auto; margin-right: auto; margin-bottom:20px;" 
+                class="btn btn-primary" 
+                ng-click="playAllWeeks()">
+            Kalan Tüm Haftaları Oynat
+        </button>
+        <button style="margin-left: auto; margin-right: auto; margin-bottom:20px;" 
+                class="btn btn-primary" 
+                ng-click="reStart()">
+           Yeniden Başla
+        </button>
+        <h2> <img src={{leagueStageInfos.logo}}> {{leagueStageInfos.tournamentName}} </h2>
+        <table class="table table-bordered ">
+            <thead>
+                <tr>
+                    <th class="danger" style="text-align: center">Sıra</th>
+                    <th class="danger" style="text-align: center">Takım</th>
+                    <th class="danger" style="text-align: center">Galibiyet</th>
+                    <th class="danger" style="text-align: center">Beraberlik</th>
+                    <th class="danger" style="text-align: center">Mağlubiyet</th>
+                    <th class="danger" style="text-align: center">Atılan</th>
+                    <th class="danger" style="text-align: center">Yenilen</th>
+                    <th class="danger" style="text-align: center">Avaraj</th>
+                    <th class="danger" style="text-align: center">Puan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in ligStatus | orderBy :'-result'">
+                    <td>{{$index +1}}</td>
+                    <td><img style="height: 30px;" src={{item.teamLogo}}>{{item.teamName}}</td>
+                    <td>{{item.winCount}}</td>
+                    <td>{{item.tieCount}}</td>
+                    <td>{{item.defeatCount}}</td>
+                    <td>{{item.scoredGoal}}</td>
+                    <td>{{item.loserGoal}}</td>
+                    <td>{{item.average}}</td>
+                    <td>{{item.result}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

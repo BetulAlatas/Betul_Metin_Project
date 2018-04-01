@@ -1,0 +1,41 @@
+{
+    "leagueStage":[
+        {   "id":1,
+            "name":"2017/2018 Sezonu",
+            "tournamentName":"Spor Toto Süper Lig",
+            "logo":"http://zmdp.cloud/iseAlim/images/1.png",
+            "leagueTable":[
+                {   "teamId":1,
+                    "name":"Fenerbahçe",
+                    "overall":75,
+                    "teamLogo":"http://zmdp.cloud/iseAlim/images/2.png"
+                },
+                {   "teamId":2,
+                    "name":"Galatasaray",
+                    "overall":74,
+                    "teamLogo":"http://zmdp.cloud/iseAlim/images/3.png"
+                },
+                {   "teamId":3,
+                    "name":"Beşiktaş",
+                    "overall":77,
+                    "teamLogo":"http://zmdp.cloud/iseAlim/images/4.png"
+                },
+                {   "teamId":4,
+                    "name":"Medipol Başakşehir",
+                    "overall":73,
+                    "teamLogo":"http://zmdp.cloud/iseAlim/images/5.png"
+                },
+                {   "teamId":5,
+                    "name":"Trabzonspor",
+                    "overall":72,
+                    "teamLogo":"http://zmdp.cloud/iseAlim/images/6.png"
+                },
+                {   "teamId":6,
+                    "name":"Demir Grup Sivasspor",
+                    "overall":70,
+                    "teamLogo":"http://zmdp.cloud/iseAlim/images/7.png"
+                }
+            ]
+        }
+    ]
+}
